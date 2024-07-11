@@ -15,7 +15,7 @@ D:/Unity_Game/2D_Video_game/TileVania
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61134
+51685
 Successfully changed project path to: D:/Unity_Game/2D_Video_game/TileVania
 D:/Unity_Game/2D_Video_game/TileVania
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/Unity_Game/2D_Video_game/TileVania
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [18656] Host "[IP] 192.168.2.10 [Port] 0 [Flags] 2 [Guid] 3542996957 [EditorId] 3542996957 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-LEGION-Y7000P) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [9384] Host "[IP] 192.168.2.10 [Port] 0 [Flags] 2 [Guid] 2914883058 [EditorId] 2914883058 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-LEGION-Y7000P) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [18656] Host "[IP] 192.168.2.10 [Port] 0 [Flags] 2 [Guid] 3542996957 [EditorId] 3542996957 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-LEGION-Y7000P) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9384] Host "[IP] 192.168.2.10 [Port] 0 [Flags] 2 [Guid] 2914883058 [EditorId] 2914883058 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-LEGION-Y7000P) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 3583.19 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 15.86 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.34f1 (4886f5360533)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.34f1/Editor/Data/Resources/UnitySubsystems
@@ -70,46 +70,46 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.34f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.34f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.34f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56272
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.34f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.34f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.653583 seconds.
-- Loaded All Assemblies, in 14.984 seconds
+Registered in 0.009000 seconds.
+- Loaded All Assemblies, in  0.510 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.236 seconds
-Domain Reload Profiling: 15218ms
-	BeginReloadAssembly (11214ms)
+- Finished resetting the current domain, in  0.334 seconds
+Domain Reload Profiling: 841ms
+	BeginReloadAssembly (181ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (1024ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (696ms)
-	LoadAllAssembliesAndSetupDomain (2041ms)
-		LoadAssemblies (11209ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (69ms)
+	LoadAllAssembliesAndSetupDomain (195ms)
+		LoadAssemblies (176ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (2040ms)
-			TypeCache.Refresh (2038ms)
-				TypeCache.ScanAssembly (1420ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (236ms)
+		AnalyzeDomain (193ms)
+			TypeCache.Refresh (191ms)
+				TypeCache.ScanAssembly (167ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (335ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (186ms)
+		SetupLoadedEditorAssemblies (258ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (119ms)
-			ProcessInitializeOnLoadMethodAttributes (52ms)
+			ProcessInitializeOnLoadAttributes (181ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,8 +117,8 @@ Domain Reload Profiling: 15218ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in 15.459 seconds
-Refreshing native plugins compatible for Editor in 6.01 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.796 seconds
+Refreshing native plugins compatible for Editor in 5.65 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -126,47 +126,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.221 seconds
-Domain Reload Profiling: 16675ms
-	BeginReloadAssembly (304ms)
+- Finished resetting the current domain, in  0.783 seconds
+Domain Reload Profiling: 1578ms
+	BeginReloadAssembly (179ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (10ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (41ms)
-	RebuildCommonClasses (63ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (87ms)
-	LoadAllAssembliesAndSetupDomain (14979ms)
-		LoadAssemblies (13992ms)
+		CreateAndSetChildDomain (25ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (533ms)
+		LoadAssemblies (416ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1168ms)
-			TypeCache.Refresh (1109ms)
-				TypeCache.ScanAssembly (978ms)
-			ScanForSourceGeneratedMonoScriptInfo (45ms)
-			ResolveRequiredComponents (11ms)
-	FinalizeReload (1222ms)
+		AnalyzeDomain (226ms)
+			TypeCache.Refresh (180ms)
+				TypeCache.ScanAssembly (162ms)
+			ScanForSourceGeneratedMonoScriptInfo (35ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (784ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (890ms)
+		SetupLoadedEditorAssemblies (601ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (17ms)
-			SetLoadedEditorAssemblies (7ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (133ms)
-			ProcessInitializeOnLoadAttributes (646ms)
-			ProcessInitializeOnLoadMethodAttributes (70ms)
-			AfterProcessingInitializeOnLoad (16ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (467ms)
+			ProcessInitializeOnLoadMethodAttributes (50ms)
+			AfterProcessingInitializeOnLoad (10ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (16ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 8.32 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.69 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4036 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 71 unused Assets / (245.9 KB). Loaded Objects now: 4490.
-Memory consumption went from 142.1 MB to 141.9 MB.
-Total: 5.353500 ms (FindLiveObjects: 0.452200 ms CreateObjectMapping: 0.185300 ms MarkObjects: 4.312500 ms  DeleteObjects: 0.401600 ms)
+Unloading 4415 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 78 unused Assets / (247.5 KB). Loaded Objects now: 4870.
+Memory consumption went from 149.7 MB to 149.5 MB.
+Total: 3.038100 ms (FindLiveObjects: 0.303300 ms CreateObjectMapping: 0.117900 ms MarkObjects: 2.425200 ms  DeleteObjects: 0.190400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -184,28 +184,332 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 27914.953550 seconds.
-  path: Assets/Sprites/Rule Tile.asset
-  artifactKey: Guid(0108ee94e1431bf47a9a7015db6f8765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Rule Tile.asset using Guid(0108ee94e1431bf47a9a7015db6f8765) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'a9841d79d99a36e40d7ec1ec2becd6f5') in 0.045019 seconds
+  Time since last request: 17753.031092 seconds.
+  path: Assets/Prefabs/Ginger (Player).prefab
+  artifactKey: Guid(fb8762642c056704f9d94c3331430752) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ginger (Player).prefab using Guid(fb8762642c056704f9d94c3331430752) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6e6e3dc008ff8890aa3f5f375b27e5b0') in 0.133549 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 37
+========================================================================
+Received Import Request.
+  Time since last request: 1813.061423 seconds.
+  path: Assets/Prefabs/Ginger (Player).prefab
+  artifactKey: Guid(fb8762642c056704f9d94c3331430752) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ginger (Player).prefab using Guid(fb8762642c056704f9d94c3331430752) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b1b613c22abdbd01686c2889a04fcbc8') in 0.016991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 39
+========================================================================
+Received Import Request.
+  Time since last request: 63.017967 seconds.
+  path: Assets/InputSystem
+  artifactKey: Guid(35144a7ee29d32243b933f45f3d69d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InputSystem using Guid(35144a7ee29d32243b933f45f3d69d1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '595e54acf0fab53fc3a024e5e097caa2') in 0.001144 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 42.318809 seconds.
+  path: Assets/InputSystem/TileVania.inputactions
+  artifactKey: Guid(47a92f5862a53f14185bba79ef2e04b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/InputSystem/TileVania.inputactions using Guid(47a92f5862a53f14185bba79ef2e04b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd9f628f11181c18fcfee3d7a57bc4c00') in 0.004710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 291.617672 seconds.
+  path: Assets/Animations/Climbing.anim
+  artifactKey: Guid(8a7fd9ef557b1fa4c8081d4a36551ef3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Animations/Climbing.anim using Guid(8a7fd9ef557b1fa4c8081d4a36551ef3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5bb0ee015dcb646af5f704830f01a6b7') in 0.115722 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 118.144085 seconds.
-  path: Assets/Sprites/Rule Tile.asset
-  artifactKey: Guid(0108ee94e1431bf47a9a7015db6f8765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Rule Tile.asset using Guid(0108ee94e1431bf47a9a7015db6f8765) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '52d0191c1919c701bd40d65183ac4a4c') in 0.072469 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_1.asset
+  artifactKey: Guid(988d1de01b2e7d345ad93f2370f3e1ed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_1.asset using Guid(988d1de01b2e7d345ad93f2370f3e1ed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd7e8d18ecf2b26e432025dd3cf5f2a4c') in 0.049535 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 3728.285336 seconds.
-  path: Assets/Sprites/Rule Tile.asset
-  artifactKey: Guid(0108ee94e1431bf47a9a7015db6f8765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Rule Tile.asset using Guid(0108ee94e1431bf47a9a7015db6f8765) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '443e0d8bb43ccf4701e618c877046c3e') in 0.022756 seconds
+  Time since last request: 0.000029 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_4.asset
+  artifactKey: Guid(c3230578c513fba4cb2d501e58ebe960) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_4.asset using Guid(c3230578c513fba4cb2d501e58ebe960) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '33e2f45a2776cdc8d1e93673bd7e787e') in 0.021735 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 21
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_20.asset
+  artifactKey: Guid(5b55bee3eb3d6cd4dbc3fa9452e8ce96) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_20.asset using Guid(5b55bee3eb3d6cd4dbc3fa9452e8ce96) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '080313a6433014c8946213599551ec92') in 0.018647 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/SPA_Background brown tint.png
+  artifactKey: Guid(e88929d2b39abb94e879693affdad490) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Sprites/SPA_Background brown tint.png using Guid(e88929d2b39abb94e879693affdad490) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0ed5b9e19ada07cd44fe48bac80679a1') in 0.068266 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_7.asset
+  artifactKey: Guid(19d75f6cf3b5a224ab049f3f2fd787da) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_7.asset using Guid(19d75f6cf3b5a224ab049f3f2fd787da) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '842d138da090c8efcd09fbd3322d72e8') in 0.019285 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_11.asset
+  artifactKey: Guid(a2cc6da407d020b4d9af47829800b582) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_11.asset using Guid(a2cc6da407d020b4d9af47829800b582) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0d01f815937f08a2080918634323c28e') in 0.019408 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Sprites/Rule Tile.asset
+  artifactKey: Guid(0108ee94e1431bf47a9a7015db6f8765) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Sprites/Rule Tile.asset using Guid(0108ee94e1431bf47a9a7015db6f8765) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '26b2aacb9be92f5a375fa3399048c416') in 0.018943 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_29.asset
+  artifactKey: Guid(ee7172462b76e1c489d8ae00be66c3d6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_29.asset using Guid(ee7172462b76e1c489d8ae00be66c3d6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c2b3ac830babc88f35a4cf595872a18f') in 0.018699 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_23.asset
+  artifactKey: Guid(f3796dd0972857b4e9dbe8551813ff0f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_23.asset using Guid(f3796dd0972857b4e9dbe8551813ff0f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5b030668d070f4ca26f16f74caed19b0') in 0.015846 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_2.asset
+  artifactKey: Guid(7f58fb0696e844542b4175b2358ee661) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_2.asset using Guid(7f58fb0696e844542b4175b2358ee661) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '360c386a11818cbb94c9470f623428bb') in 0.018590 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/SPA_Ladder.png
+  artifactKey: Guid(cd93daa1902d2c6418028300bcf1b060) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Sprites/SPA_Ladder.png using Guid(cd93daa1902d2c6418028300bcf1b060) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0ef88115f60a33b2051b5eeba0b16127') in 0.028932 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_13.asset
+  artifactKey: Guid(7eb06a43b0e408a4998450a8b582f4e3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_13.asset using Guid(7eb06a43b0e408a4998450a8b582f4e3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd99c1768251a60710ef604bccbb8f66e') in 0.016976 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_18.asset
+  artifactKey: Guid(1c71e8a79c8bf8740bed5f463c086f9c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_18.asset using Guid(1c71e8a79c8bf8740bed5f463c086f9c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '744b5162f8f1a04609e881e851fbdbf4') in 0.016702 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_5.asset
+  artifactKey: Guid(7d480149b0e50e846b18f81bcebed99e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_5.asset using Guid(7d480149b0e50e846b18f81bcebed99e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7ba7c54ec7fa7cb7ed68bdc2e01db4b3') in 0.021016 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_14.asset
+  artifactKey: Guid(2fec998c162670d41b45f6a688643cb9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_14.asset using Guid(2fec998c162670d41b45f6a688643cb9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '30a46cc7a1e083f71e061430a61b17d5') in 0.019736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/SPA_Coins.png
+  artifactKey: Guid(6879992b5254c294d90288bfe5528ff3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Sprites/SPA_Coins.png using Guid(6879992b5254c294d90288bfe5528ff3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b7eefd4758d80b10c499dcc47e60104b') in 0.058545 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Tiles/Platforms Palette.prefab
+  artifactKey: Guid(d6723e646d4e5c9449af7bdf7f60bc7b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/Platforms Palette.prefab using Guid(d6723e646d4e5c9449af7bdf7f60bc7b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '80ba1c542af2c5755e3901e4bd0b7dff') in 0.027502 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_10.asset
+  artifactKey: Guid(83b5c7192657f0049885e759c57fc91c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_10.asset using Guid(83b5c7192657f0049885e759c57fc91c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '670dde662815da595566e54e2b1d8d5e') in 0.021300 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_17.asset
+  artifactKey: Guid(6824094dada199548b60e44b0c68e852) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_17.asset using Guid(6824094dada199548b60e44b0c68e852) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9162324bc473f0d585cf147cf744653b') in 0.020032 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_27.asset
+  artifactKey: Guid(fcd30bcadb0726f4a92c2c1f11dafc1a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_27.asset using Guid(fcd30bcadb0726f4a92c2c1f11dafc1a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6e10eab5705a6da5375989586859015c') in 0.020819 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_14.asset
+  artifactKey: Guid(67f08c830d663ea44a929a72bf40d70a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_14.asset using Guid(67f08c830d663ea44a929a72bf40d70a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '299c9f483d60fdc67072aeaf79305b33') in 0.015663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_19.asset
+  artifactKey: Guid(fd8a7f90153ea6e47a7e784fa2d1ec7a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_19.asset using Guid(fd8a7f90153ea6e47a7e784fa2d1ec7a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '747cec0dd2609c31c90fae339bb1e25e') in 0.018794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_15.asset
+  artifactKey: Guid(9c8f2ae5436ffca44ad50cb5e611b469) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_15.asset using Guid(9c8f2ae5436ffca44ad50cb5e611b469) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b6ccf7971eb5a048296e3a5930c32d25') in 0.017335 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/SPA_Player_Ginger.png
+  artifactKey: Guid(9c21b1dbc650adc4dbcfcb50a0a3724a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Sprites/SPA_Player_Ginger.png using Guid(9c21b1dbc650adc4dbcfcb50a0a3724a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e6f6a4e9e40f31eae87dafdb10d7b33a') in 0.062157 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_9.asset
+  artifactKey: Guid(befb91d46ef8cc549a5025f3847178ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_9.asset using Guid(befb91d46ef8cc549a5025f3847178ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cb2c3646fb9e40649fb98c7b6b38d72c') in 0.023158 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_15.asset
+  artifactKey: Guid(19b37da02b7781443872df64805d6db4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_15.asset using Guid(19b37da02b7781443872df64805d6db4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ac38a3e4b98d10c463a9025176d08bf9') in 0.023001 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_22.asset
+  artifactKey: Guid(442e97b903c8bd143b8ade717e5937f4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_22.asset using Guid(442e97b903c8bd143b8ade717e5937f4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b9937a6259321f195a48950abe69b330') in 0.021246 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_6.asset
+  artifactKey: Guid(67387e8f49923ca46bc8ed131c40025c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_6.asset using Guid(67387e8f49923ca46bc8ed131c40025c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'db6aa3b1404794e0f1b4085c9e4cac09') in 0.020952 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_6.asset
+  artifactKey: Guid(1883d0f57d689f74aab8813d38f833c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_6.asset using Guid(1883d0f57d689f74aab8813d38f833c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7abe231ceae76460892a1ced960c1fed') in 0.019653 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Tiles/SPA_Rock_Grass_Water_5.asset
+  artifactKey: Guid(535675aff9ed5094aa56c0531a576ac9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Rock_Grass_Water_5.asset using Guid(535675aff9ed5094aa56c0531a576ac9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1f87c8a314244e5567a9eff1e7a54843') in 0.019098 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Tiles/SPA_Background brown tint_7.asset
+  artifactKey: Guid(3cf094c79f8c28c44b3066f2861d1699) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Tiles/SPA_Background brown tint_7.asset using Guid(3cf094c79f8c28c44b3066f2861d1699) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '678df268cfd652793128636563b927d2') in 0.018601 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
