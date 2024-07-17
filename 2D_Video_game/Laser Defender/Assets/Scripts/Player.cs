@@ -1,0 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class Player : MonoBehaviour
+{
+    [SerializeField] float moveSpeed = 7f;
+    //Input vector
+    Vector2 moveinput;
+    //Bound vector
+    Vector2 minBounds;
+    Vector2 maxBounds;
+    //Padding
+    [SerializeField] float paddingLeft;
+    [SerializeField] float paddingRight;
+    [SerializeField] float paddingTop;
+    [SerializeField] float paddingBottom;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        InitBounds();
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        Move();
+    }
+    void InitBounds()
+    {
+        Camera mainCamera = Camera.main;
+        minBounds = mainCamera.ViewportToWorldPoint(new Vector2(0,0));
+        maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1,1));
+    }
+    void OnMove(InputValue value)
+    {
+        moveinput = value.Get<Vector2>();
+        Debug.Log(moveinput);
+    }
+    void Move()
+    {
+        Vector2 delta = moveinput * moveSpeed * Time.deltaTime;
+        Vector2 newPos = new Vector2();
+        newPos.x = Mathf.Clamp(transform.position.x + delta.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
+        newPos.y = Mathf.Clamp(transform.position.y + delta.y, minBounds.y + paddingBottom, maxBounds.y - paddingTop);
+        transform.position = newPos;
+    }
+
+}
