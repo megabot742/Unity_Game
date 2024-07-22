@@ -58,5 +58,4 @@ public class Player : MonoBehaviour
             shooter.isFiring = value.isPressed;
         }
     }
-
 }
