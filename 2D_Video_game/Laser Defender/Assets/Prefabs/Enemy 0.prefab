@@ -76,7 +76,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!58 &1107912246289802306
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -124,8 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4483c6df8504a9499900d9aa8fa1fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   health: 50
+  score: 50
   hitEffect: {fileID: 5413598095824399013, guid: aab88821c5230f843859a4b97b4b45dd, type: 3}
+  applyCameraShake: 0
 --- !u!114 &-7056712522741359628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,12 +233,12 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -923139439
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 793dae7d97c0069488f9159dfb86d5f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.93, y: 0.84}
   m_AdaptiveModeThreshold: 0.5
