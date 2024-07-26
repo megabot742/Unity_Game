@@ -76,7 +76,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: fe2c37f42887cb8459c7e8f1848eab0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.82, y: 0.84}
   m_AdaptiveModeThreshold: 0.5
@@ -239,9 +239,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1229887430578159154, guid: 5755ed79f3b8b184e87932a58e55beb0, type: 3}
-  projectileSpeed: 10
+  projectileSpeed: -10
   projectileLifetime: 5
-  baseFiringRate: 1
+  baseFiringRate: 2
   firingRateVariance: 0.5
   minimumFiringRate: 0.1
   useAI: 1
