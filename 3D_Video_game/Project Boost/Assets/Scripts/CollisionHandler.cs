@@ -8,17 +8,37 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] float levelLoadDeplay = 2f;
     [SerializeField] AudioClip crashAduio;
     [SerializeField] AudioClip finishAduio;
+    [SerializeField] ParticleSystem crashParticles;
+    [SerializeField] ParticleSystem finishParticles;
 
     AudioSource audioSource;
 
     bool isTransitionting;
+    bool collisionDisabled;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+    }
+
+    void Update() 
+    {
+        RespondToDebugKeys();
+    }
+    void RespondToDebugKeys()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if(Input.GetKeyDown(KeyCode.C))
+        {
+            collisionDisabled = !collisionDisabled; //toggle collision
+        }
     }
     void OnCollisionEnter(Collision other) 
     {
-        if(isTransitionting)
+        if(isTransitionting || collisionDisabled)
         {
             return;
         }
@@ -41,7 +61,7 @@ public class CollisionHandler : MonoBehaviour
         isTransitionting = true;
         audioSource.Stop(); //stop all sound before play finishAduio 
         audioSource.PlayOneShot(finishAduio);
-        //to do add Particle effect upon finish
+        finishParticles.Play();
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", levelLoadDeplay); //Invoke -> Method deplay time
     }
@@ -50,7 +70,7 @@ public class CollisionHandler : MonoBehaviour
         isTransitionting = true;
         audioSource.Stop(); //stop all sound before play crashAduio
         audioSource.PlayOneShot(crashAduio);
-        //to do add Particle effect upon crash
+        crashParticles.Play();
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", levelLoadDeplay);
         
