@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    [Header("General Setup Setting")]
+    [Tooltip("How fast ship moves up and down based upon player input")]
     [SerializeField] float speedControl= 30f;
-    [SerializeField] float xRange = 10f;
-    [SerializeField] float yRange = 7f;
+    [Tooltip("How far player moves horizontally")][SerializeField] float xRange = 10f;
+    [Tooltip("How far player moves vertically")][SerializeField] float yRange = 7f;
+
+    [Header("Laser gun array")]
+    [Tooltip("Add all player lasers here")]
+    [SerializeField] GameObject[] lasers;
+
+    [Header("Screen position based tuning")]
     [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float controlPicthFactor = -15f;
     [SerializeField] float positionYawFactor = 2f;
+
+    [Header("Player input based tuning")]
+    [SerializeField] float controlPicthFactor = -15f;
     [SerializeField] float controlRollFactor = -15f;
-    float xThrow,yThrow,zThrow;
+    float xThrow,yThrow;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
     }
 
     void ProcessTranslation()
@@ -56,5 +67,24 @@ public class PlayerController : MonoBehaviour
         //Roll
         float roll = controlRollFactor * xThrow; 
         transform.localRotation = Quaternion.Euler(pitch,yaw,roll);
+    }
+    void ProcessFiring()
+    {
+        if(Input.GetKey(KeyCode.Space)) //press space for shooting
+        {
+            SetActiveLasers(true);
+        }
+        else
+        {
+            SetActiveLasers(false);
+        }
+    }
+    void SetActiveLasers(bool isActive)
+    {
+        foreach (GameObject iteam in lasers)
+        {
+           var emissionModule = iteam.GetComponent<ParticleSystem>().emission;
+           emissionModule.enabled = isActive;
+        }
     }
 }
