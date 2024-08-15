@@ -38,11 +38,12 @@ public class Enemy : MonoBehaviour
     {
          GameObject hitvfx = Instantiate(hitVFX, transform.position, Quaternion.identity);
         hitvfx.transform.parent = parentGameObject.transform;
-        hitPoint -= scorePerHit;
-        scoreBoard.IncreaseScore(scorePerHit);
+        hitPoint--;
+        
     }
     void KillEnemy() 
     {
+        scoreBoard.IncreaseScore(scorePerHit);
         //Debug.Log($"{name} hit by {other.gameObject.name}"); //check enemy hit by player ship
         GameObject deathvfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
         deathvfx.transform.parent = parentGameObject.transform;
