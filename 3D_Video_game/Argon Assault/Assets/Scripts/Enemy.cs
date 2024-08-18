@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] GameObject deathVFX;
+    [SerializeField] GameObject deathFX; //VFX & SFX
     [SerializeField] GameObject hitVFX;
-    
+
     [SerializeField] int scorePerHit = 25;
     [SerializeField] int hitPoint = 75;
 
@@ -43,10 +43,11 @@ public class Enemy : MonoBehaviour
     }
     void KillEnemy() 
     {
+
         scoreBoard.IncreaseScore(scorePerHit);
         //Debug.Log($"{name} hit by {other.gameObject.name}"); //check enemy hit by player ship
-        GameObject deathvfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
-        deathvfx.transform.parent = parentGameObject.transform;
+        GameObject deathfx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        deathfx.transform.parent = parentGameObject.transform;
         Destroy(gameObject);
     }
 }

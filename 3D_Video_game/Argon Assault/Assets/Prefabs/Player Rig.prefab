@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3019085311024565223}
   - component: {fileID: 3901577134038208066}
   - component: {fileID: 7264593360768224610}
+  - component: {fileID: 6053334941489461964}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -92,6 +93,66 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63085187502930953}
   m_Enabled: 1
+--- !u!114 &6053334941489461964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63085187502930953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 3019085311024565223}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 1
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &3530570738306821746
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +312,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3295810424201363760, guid: 196e2bf1a23419a4b9e9be30a1e1cb53, type: 3}
   m_PrefabInstance: {fileID: 2990695187066782733}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &2179582357225800992 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4016784215255351597, guid: 196e2bf1a23419a4b9e9be30a1e1cb53, type: 3}
+  m_PrefabInstance: {fileID: 2990695187066782733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6184234748385801941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8958721587788362456, guid: 196e2bf1a23419a4b9e9be30a1e1cb53, type: 3}
@@ -279,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoadDeplay: 1
-  explosion: {fileID: 0}
+  explosion: {fileID: 2179582357225800992}
 --- !u!54 &1979992316838975567
 Rigidbody:
   m_ObjectHideFlags: 0
