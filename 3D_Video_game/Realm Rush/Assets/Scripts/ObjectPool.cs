@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,10 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] float spawnTimer = 1f;
+    [SerializeField] [Range(0,50)]int poolSize;
+    [SerializeField] [Range(1f,30f)]float spawnTimer;
     [SerializeField] bool spawnEnemy = true;
-    [SerializeField] int poolSize = 5;
+    
 
     GameObject[] pool;
     // Start is called before the first frame update
