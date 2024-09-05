@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -8,6 +9,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range = 100f; //weapon range
     [SerializeField] float damage = 25f;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] GameObject hitEffect;
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
@@ -29,10 +31,9 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
-            Debug.Log("hit" + hit.transform.name);
             //TODO: add some hit effect for visual player
+            CreateHitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-            //call a method on EnemyHelth that decreases the enemy's health
             if(target == null) return;
             target.TakeDamage(damage);
         }
@@ -40,5 +41,10 @@ public class Weapon : MonoBehaviour
         {
             return; //hit sky
         }
+    }
+    void CreateHitImpact(RaycastHit hit)
+    {
+        GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        //Destroy(impact, 1);
     }
 }

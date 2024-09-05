@@ -40,7 +40,11 @@ public class EnemyAI : MonoBehaviour
     }
     void ChaseTarget()
     {
+        GetComponent<Animator>().SetBool("attack", false);
+        GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
+
+
         //if player too far, enemy don't chase
         // if(distanceToTarget > chaseRange + 10f) 
         // {
@@ -49,6 +53,7 @@ public class EnemyAI : MonoBehaviour
     }
     void AttackTarget()
     {
+        GetComponent<Animator>().SetBool("attack", true);
         Debug.Log("You dead!!!");
     }
     void OnDrawGizmosSelected() //Draw enemy chaseRange radius
