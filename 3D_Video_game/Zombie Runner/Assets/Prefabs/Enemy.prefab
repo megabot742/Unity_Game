@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3819482158824284250}
   - component: {fileID: 1061834589437676998}
   - component: {fileID: 5812222930255063178}
+  - component: {fileID: 1072131249361306160}
   - component: {fileID: 345996893120306933}
   - component: {fileID: 3811565345026791847}
-  - component: {fileID: 1072131249361306160}
+  - component: {fileID: 8701737110169323259}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -134,6 +135,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1072131249361306160
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429350592667733027}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d511a3c1dd051564da193d0e089d148d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &345996893120306933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,27 +183,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoint: 100
---- !u!95 &1072131249361306160
-Animator:
-  serializedVersion: 5
+--- !u!114 &8701737110169323259
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429350592667733027}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d511a3c1dd051564da193d0e089d148d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a0dfb4fcf67014297f5aa920f877c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  damage: 40
 --- !u!1 &9020257645754570203
 GameObject:
   m_ObjectHideFlags: 0
