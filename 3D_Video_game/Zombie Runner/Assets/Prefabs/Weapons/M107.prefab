@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8380826059746955443}
   - component: {fileID: 3122833959909107630}
   - component: {fileID: 7620116761571052049}
+  - component: {fileID: 4432192508842378840}
   m_Layer: 0
   m_Name: M107
   m_TagString: Untagged
@@ -184,11 +185,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
-  range: 100
-  damage: 25
+  range: 50
+  damage: 100
   muzzleFlash: {fileID: 6454997517859503597}
   hitEffect: {fileID: 6914151834707555027, guid: 821bb3e536e2b7e46b1923fe834ce836, type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 2
+  canShot: 1
+  timeBetweenShots: 3
+--- !u!114 &4432192508842378840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642261951017548493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345444ead1e65d24283dc936046837b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsCamera: {fileID: 0}
+  zoomedOutPOV: 40
+  zoomedInPOV: 10
 --- !u!1 &5728396103503008369
 GameObject:
   m_ObjectHideFlags: 0

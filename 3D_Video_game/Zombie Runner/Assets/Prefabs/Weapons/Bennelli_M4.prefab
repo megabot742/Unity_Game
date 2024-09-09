@@ -100,11 +100,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
-  range: 100
-  damage: 25
+  range: 20
+  damage: 50
   muzzleFlash: {fileID: 461740461908641999}
   hitEffect: {fileID: 6914151834707555027, guid: 821bb3e536e2b7e46b1923fe834ce836, type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 1
+  canShot: 1
+  timeBetweenShots: 1.5
 --- !u!1 &4437807425652338111
 GameObject:
   m_ObjectHideFlags: 0

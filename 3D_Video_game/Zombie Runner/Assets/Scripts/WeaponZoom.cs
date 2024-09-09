@@ -10,21 +10,32 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] float zoomedInPOV = 20f;
    
     bool zoomedInToggle = false;
-     void Update() 
+    void OnDisable() 
     {
-        if(Input.GetMouseButtonDown(1))
+        ZoomOut(); // zoom out camera when change another Weapon 
+    }
+    void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.Mouse1)) //click right mouse
         {
             if(!zoomedInToggle)
             {
-                zoomedInToggle = true;
-                fpsCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = zoomedInPOV;
+                ZoomIn();
             }
             else
             {
-                zoomedInToggle = false;
-                fpsCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = zoomedOutPOV;
-                
+                ZoomOut();
             }
         }
+    }
+    void ZoomIn()
+    {
+        zoomedInToggle = true;
+        fpsCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = zoomedInPOV;
+    }
+    void ZoomOut()
+    {
+        zoomedInToggle = false;
+        fpsCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = zoomedOutPOV;
     }
 }
