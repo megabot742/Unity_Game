@@ -12,12 +12,21 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
+    EnemyHealth health;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
     }
     void Update()
     {
+        if(health.IsDead())
+        {
+            enabled = false;
+            navMeshAgent.enabled = false;
+            GetComponent<CapsuleCollider>().enabled = false; // turn off for not error SetDestination
+            return;
+        }
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if(isProvoked == true)
         {
@@ -49,8 +58,6 @@ public class EnemyAI : MonoBehaviour
         GetComponent<Animator>().SetBool("attack", false);
         GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
-
-
         //if player too far, enemy don't chase
         // if(distanceToTarget > chaseRange + 10f) 
         // {
