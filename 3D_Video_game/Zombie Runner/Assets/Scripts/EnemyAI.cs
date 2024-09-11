@@ -58,11 +58,6 @@ public class EnemyAI : MonoBehaviour
         GetComponent<Animator>().SetBool("attack", false);
         GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
-        //if player too far, enemy don't chase
-        // if(distanceToTarget > chaseRange + 10f) 
-        // {
-        //     isProvoked = false;
-        // }
     }
     void FaceTarget()
     {
