@@ -1,0 +1,96 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelSpawner : MonoBehaviour
+{
+    [SerializeField] GameObject[] model;
+    [HideInInspector]
+    [SerializeField] GameObject[] modelPrefab = new GameObject[4];
+    [SerializeField] GameObject WinPrefab;
+
+    GameObject temp1, temp2;
+
+    [SerializeField] int level = 1, addOn = 7;
+    float i = 0;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //Check level
+        if(level > 9)
+        {
+            addOn = 0;
+        } 
+        ModelSelection(); //Select model
+        CreateModel(); //Create model
+        
+    }
+
+    void CreateModel()
+    {
+        //at the current ball position is 0, so the loop will go negative
+        for(i = 0; i > -level-addOn; i-=0.5f) // create 16 loop in level = 1, addOn = 7
+        {
+            //check level and selects a model from the modelPrefab (only have model 0 -> 3)
+            if(level <= 20)
+            {
+                temp1 = Instantiate(modelPrefab[Random.Range(0,2)]);
+            }
+            else if(level > 20 && level <= 50)
+            {
+                temp1 = Instantiate(modelPrefab[Random.Range(1,3)]);
+            }
+            else if(level > 50 && level <= 100)
+            {
+                temp1 = Instantiate(modelPrefab[Random.Range(2,4)]);
+            }
+            else //level > 100, case of too many levels, remember to add the model to modelPrefab
+            {
+                temp1 = Instantiate(modelPrefab[Random.Range(3,4)]);
+            }
+            temp1.transform.position = new Vector3(0, i - 0.01f, 0);
+            temp1.transform.eulerAngles = new Vector3(0, i * 8, 0);
+        }
+        //create Win prefab
+        temp2 = Instantiate(WinPrefab);
+        temp2.transform.position = new Vector3(0, i - 0.01f, 0);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    void ModelSelection() //random and select model 
+    {
+        int randomModel = Random.Range(0,5);
+        switch (randomModel)
+        {
+            case 0: //mode 0 -> 3
+                for (int i = 0; i < 4; i++)
+                    modelPrefab[i] = model[i];
+                break;
+            
+            case 1: //mode 3 -> 7
+                for (int i = 0; i < 4; i++)
+                    modelPrefab[i] = model[i + 4];
+                break;
+            
+            case 2: //model 8 -> 11
+                for (int i = 0; i < 4; i++)
+                    modelPrefab[i] = model[i + 8];
+                break;
+            
+            case 3: //model 12 -> 15
+                for (int i = 0; i < 4; i++)
+                    modelPrefab[i] = model[i + 12];
+                break;
+            
+            case 4: //model 16 -> 19
+                for (int i = 0; i < 4; i++)
+                    modelPrefab[i] = model[i + 16];
+                break;
+        }
+    }
+}
