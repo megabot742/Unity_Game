@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSpawner : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class LevelSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        level = PlayerPrefs.GetInt("Level", 1);
         //Check level
         if(level > 9)
         {
@@ -29,6 +31,7 @@ public class LevelSpawner : MonoBehaviour
 
     void CreateModel()
     {
+        float random = Random.value;
         //at the current ball position is 0, so the loop will go negative
         for(i = 0; i > -level-addOn; i-=0.5f) // create 16 loop in level = 1, addOn = 7
         {
@@ -51,6 +54,22 @@ public class LevelSpawner : MonoBehaviour
             }
             temp1.transform.position = new Vector3(0, i - 0.01f, 0);
             temp1.transform.eulerAngles = new Vector3(0, i * 8, 0);
+
+            if(Mathf.Abs(i) >= level * 0.3f && Mathf.Abs(i) <= level * 0.6f)
+            {
+                temp1.transform.eulerAngles = new Vector3(0, i * 8, 0);
+                temp1.transform.eulerAngles += Vector3.up * 180;
+            }else if(Mathf.Abs(i) >= level * 0.8f)
+            {
+                temp1.transform.eulerAngles = new Vector3(0, i * 8, 0);
+
+                if(random > 0.75f)
+                {
+                    temp1.transform.eulerAngles += Vector3.up * 180;
+                }
+            }
+
+            temp1.transform.parent = FindObjectOfType<Rotator>().transform;
         }
         //create Win prefab
         temp2 = Instantiate(WinPrefab);
@@ -92,5 +111,10 @@ public class LevelSpawner : MonoBehaviour
                     modelPrefab[i] = model[i + 16];
                 break;
         }
+    }
+    public void NextLevel()
+    {
+        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+        SceneManager.LoadScene(0);
     }
 }
