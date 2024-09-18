@@ -15,8 +15,7 @@ public class LevelSpawner : MonoBehaviour
     [SerializeField] int level = 1, addOn = 7;
     float i = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         level = PlayerPrefs.GetInt("Level", 1);
         //Check level
