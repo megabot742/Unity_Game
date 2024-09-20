@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     Text scoreText;
-    [SerializeField] int score = 10;
+    [SerializeField] int score = 0;
     // Start is called before the first frame update
     void Awake()
     {
