@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using Image = UnityEngine.UI.Image;
 
@@ -13,7 +14,7 @@ public class Ball : MonoBehaviour
     int currentBronkenStacks, totalStacks;
     [SerializeField] GameObject invincibleObj;
     [SerializeField] Image invincibleFill;
-    [SerializeField] GameObject fireEffect;
+    [SerializeField] GameObject fireEffect, winEffect, splashEffect;
     public enum BallState
     {
         Prepare,
@@ -132,6 +133,16 @@ public class Ball : MonoBehaviour
         if(!smash)
         {
             rb.velocity = new Vector3(0, 50 * Time.deltaTime * 5,0);
+            if(other.gameObject.tag != "Finish")
+            {
+                GameObject splash = Instantiate(splashEffect);
+                splash.transform.SetParent(other.transform);
+                splash.transform.localEulerAngles = new Vector3(90, Random.Range(0, 359), 0);
+                float randomScale = Random.Range(0.18f, 0.25f);
+                splash.transform.localScale = new Vector3(randomScale, randomScale, 1);
+                splash.transform.position = new Vector3(transform.position.x, transform.position.y - 0.22f, transform.position.z);
+                splash.GetComponent<SpriteRenderer>().color = transform.GetChild(0).GetComponent<MeshRenderer>().material.color;
+            }
             SoundManager.instance.PlaySoundFX(bounceOffClip, 0.5f);
         }
         else
@@ -151,8 +162,10 @@ public class Ball : MonoBehaviour
                 }
                 else if(other.gameObject.tag == "plane")
                 {
-                    Debug.Log("over");
-                    ScoreManager.instance.ResetScore();
+                    rb.isKinematic = true;
+                    transform.GetChild(0).gameObject.SetActive(false);
+                    ballState = BallState.Died;
+                    PlayerPrefs.DeleteKey("Level"); //Reset Level after die
                     SoundManager.instance.PlaySoundFX(deadClip, 0.5f);
                 }
             }
@@ -163,6 +176,10 @@ public class Ball : MonoBehaviour
         {
             ballState = BallState.Finish;
             SoundManager.instance.PlaySoundFX(winClip, 0.7f);
+            GameObject win = Instantiate(winEffect);
+            win.transform.SetParent(Camera.main.transform);
+            win.transform.localPosition = Vector3.up * 1.5f;
+            win.transform.eulerAngles = Vector3.zero;
         }
         
     }

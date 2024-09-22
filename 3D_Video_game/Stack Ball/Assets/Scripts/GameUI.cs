@@ -5,12 +5,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 
 public class GameUI : MonoBehaviour
 {
-    [SerializeField] GameObject homeUI, inGameUI;
+    [SerializeField] GameObject homeUI, inGameUI, finishUI, gameOverUI;
     [SerializeField] GameObject allButtons;
     bool buttons;
 
@@ -22,6 +23,14 @@ public class GameUI : MonoBehaviour
     [SerializeField] Image levelSlider;
     [SerializeField] Image currentLevelImg;
     [SerializeField] Image nextLevelImg;
+    [SerializeField] Text currentLevelText, nextLevelText;
+
+    [Header("Finish")]
+    [SerializeField] Text finishLevelText;
+
+    [Header("GameOver")]
+    [SerializeField] Text gameOverScoreText;
+    [SerializeField] Text gameOverBestText;
 
     Material ballMat;
     Ball ball;
@@ -36,11 +45,12 @@ public class GameUI : MonoBehaviour
         levelSlider.color = ballMat.color;
         currentLevelImg.color = ballMat.color;
         nextLevelImg.color = ballMat.color;
-
         soundButton.onClick.AddListener(() => SoundManager.instance.SoundOnOff());
     }
-
-
+    private void Start() {
+        currentLevelText.text = FindObjectOfType<LevelSpawner>().level.ToString();
+        nextLevelText.text = FindObjectOfType<LevelSpawner>().level + 1 + "";
+    }
     // Update is called once per frame
     void Update()
     {
@@ -58,6 +68,34 @@ public class GameUI : MonoBehaviour
             ball.ballState = Ball.BallState.Playing;
             homeUI.SetActive(false);
             inGameUI.SetActive(true);
+            finishUI.SetActive(false);
+            gameOverUI.SetActive(false);
+        }
+        if(ball.ballState == Ball.BallState.Finish)
+        {
+            homeUI.SetActive(false);
+            inGameUI.SetActive(false);
+            finishUI.SetActive(true);
+            gameOverUI.SetActive(false);
+
+            finishLevelText.text = "Level " + FindObjectOfType<LevelSpawner>().level;
+        }
+
+        if(ball.ballState == Ball.BallState.Died)
+        {
+            homeUI.SetActive(false);
+            inGameUI.SetActive(false);
+            finishUI.SetActive(false);
+            gameOverUI.SetActive(true);
+
+            gameOverScoreText.text = ScoreManager.instance.score.ToString();
+            gameOverBestText.text = PlayerPrefs.GetInt("HighScore").ToString();
+
+            if(Input.GetMouseButtonDown(0))
+            {
+                ScoreManager.instance.ResetScore();
+                SceneManager.LoadScene(0);
+            }
         }
     }
     bool IgnoreUI()

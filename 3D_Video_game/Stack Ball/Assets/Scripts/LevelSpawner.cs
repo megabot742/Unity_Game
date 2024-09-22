@@ -12,11 +12,18 @@ public class LevelSpawner : MonoBehaviour
 
     GameObject temp1, temp2;
 
-    [SerializeField] int level = 1, addOn = 7;
+    public int level = 1, addOn = 7;
     float i = 0;
 
+
+    [SerializeField] Material plateMat, baseMat;
+    [SerializeField] MeshRenderer ballMesh;
     void Awake()
     {
+        plateMat.color = Random.ColorHSV(0, 1, 0.5f, 1, 1, 1);
+        baseMat.color = plateMat.color + Color.gray;
+        ballMesh.material.color = plateMat.color;
+        
         level = PlayerPrefs.GetInt("Level", 1);
         //Check level
         if(level > 9)
@@ -24,10 +31,8 @@ public class LevelSpawner : MonoBehaviour
             addOn = 0;
         } 
         ModelSelection(); //Select model
-        CreateModel(); //Create model
-        
+        CreateModel(); //Create model  
     }
-
     void CreateModel()
     {
         float random = Random.value;
@@ -78,7 +83,12 @@ public class LevelSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonDown(1))
+        {
+            plateMat.color = Random.ColorHSV(0, 1, 0.5f, 1, 1, 1);
+            baseMat.color = plateMat.color + Color.gray;
+            ballMesh.material.color = plateMat.color;
+        }
     }
     void ModelSelection() //random and select model 
     {
@@ -113,7 +123,10 @@ public class LevelSpawner : MonoBehaviour
     }
     public void NextLevel()
     {
-        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+        int currentLevel = PlayerPrefs.GetInt("Level", 1);
+        PlayerPrefs.SetInt("Level", currentLevel + 1);
         SceneManager.LoadScene(0);
     }
 }
+
+
