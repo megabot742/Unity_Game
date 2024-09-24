@@ -33,11 +33,11 @@ public class PlayerController : MonoBehaviour
     }
     void RotatePlayer()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow)) // buttton arrow left
         {
             rb2d.AddTorque(torqueAmount);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow)) // buttton arrow right
         {
             rb2d.AddTorque(-torqueAmount);
         }
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     void RespondToBoost()
     {
-        if(Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetKey(KeyCode.UpArrow))// buttton arrow up
         {
             surfaceEffector2D.speed = boostSpeed;
         }

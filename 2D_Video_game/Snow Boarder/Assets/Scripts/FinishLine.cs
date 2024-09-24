@@ -8,7 +8,7 @@ public class FinishLine : MonoBehaviour
     [SerializeField] float LoadDeplay = 1f;
     [SerializeField] ParticleSystem finishEffect;
     
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other) //check player trigger
     {
         if(other.tag == "Player")
         {
@@ -18,7 +18,7 @@ public class FinishLine : MonoBehaviour
         }
     }
 
-    void ReloadScene()
+    void ReloadScene() //after trigger finish reload scene
     {
         SceneManager.LoadScene(0);
     }

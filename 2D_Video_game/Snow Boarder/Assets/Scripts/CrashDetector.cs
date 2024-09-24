@@ -11,7 +11,7 @@ public class CrashDetector : MonoBehaviour
     bool hasCrasher = false;
     void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "Ground" && !hasCrasher)
+        if(other.tag == "Ground" && !hasCrasher) //check crash, disable player control and reload scene
         {
             hasCrasher = true;
             FindObjectOfType<PlayerController>().DisableControls();

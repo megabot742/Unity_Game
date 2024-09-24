@@ -12,17 +12,19 @@ public class Driver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
-        float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;// move left and right
+        float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime; // move up and down
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
     }
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        moveSpeed = slowSpeed;
+        //decreased speed after crash
+        moveSpeed = slowSpeed; 
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
+        //increase speed when hit boost
         if(other.tag == "Boost")
         {
             moveSpeed = boostSpeed;
