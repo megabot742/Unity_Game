@@ -32,6 +32,7 @@ public class ScoreManager : MonoBehaviour
 
     void MakeSingleton()
     {
+        //check scoreManager
         if(instance != null)
         {
             Destroy(gameObject);
