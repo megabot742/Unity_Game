@@ -86,7 +86,7 @@ public class Quiz : MonoBehaviour
         {
             correctAnswerIndex = currentQuestion.GetCorrectAnswerIndex();
             string correctAnswer = currentQuestion.GetAnswer(correctAnswerIndex);
-            questionText.text = "Sorry, the correct answer was;\n" + correctAnswer;
+            questionText.text = "Sorry, the correct answer was:\n" + correctAnswer;
             buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
         }
