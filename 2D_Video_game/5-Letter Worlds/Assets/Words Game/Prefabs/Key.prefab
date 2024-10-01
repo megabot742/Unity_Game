@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2776584721516637089}
   - component: {fileID: 6169627887145147536}
   - component: {fileID: 3122224927302088440}
+  - component: {fileID: 6048979781319046074}
   m_Layer: 5
   m_Name: Key
   m_TagString: Untagged
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -5177388603050735206, guid: 44e041de00884f3449e8c2623f6db154, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -77,7 +78,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.5
 --- !u!114 &6169627887145147536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +135,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c3fb8efce33194d98b6ecd87ed5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rendererImage: {fileID: 2776584721516637089}
   letterTex: {fileID: 5473915252890493432}
+--- !u!114 &6048979781319046074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951078913840950482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.78431374}
+  m_EffectDistance: {x: 0, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8395922888186948080
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,8 +219,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Q
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 73313f961ae71504c9a523c5d15ca128, type: 2}
+  m_sharedMaterial: {fileID: -8359877637180650800, guid: 73313f961ae71504c9a523c5d15ca128, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

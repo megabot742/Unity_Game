@@ -6,6 +6,7 @@ using UnityEngine;
 public class LetterContainer : MonoBehaviour
 {
     [Header("Elements")]
+    [SerializeField] SpriteRenderer letterContainer;
     [SerializeField] TextMeshPro letter;
     // Start is called before the first frame update
     void Start()
@@ -21,13 +22,25 @@ public class LetterContainer : MonoBehaviour
     public void Initialize()
     {
         letter.text = "";
+        letterContainer.color = Color.white;
     }
 
     public void SetLetter(char letter)
     {
         this.letter.text = letter.ToString();
     }
-
+    public void SetValid()
+    {
+        letterContainer.color = Color.green;
+    }
+    public void SetPotentail()
+    {
+        letterContainer.color = Color.yellow;
+    }
+    public void SetInvalid()
+    {
+        letterContainer.color = Color.gray;
+    }
     public char GetLetter()
     {
         return letter.text[0];
