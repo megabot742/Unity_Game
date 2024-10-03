@@ -17,8 +17,26 @@ public class InputManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Intialeize();
+        Initialize();
         KeyboardKey.onKeyPressed += KeyPressedCallback;
+        GameManager.onGameStateChanged += GameStateChangedCallback;
+    }
+    void OnDestroy() 
+    {
+        KeyboardKey.onKeyPressed -= KeyPressedCallback;
+        GameManager.onGameStateChanged -= GameStateChangedCallback;
+    }
+    void GameStateChangedCallback(GameState gameState)
+    {
+        switch (gameState)
+        {
+            case GameState.Game:
+                Initialize();
+                break;
+            
+            case GameState.LevelComplete:
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -26,8 +44,13 @@ public class InputManager : MonoBehaviour
     {
         
     }
-    void Intialeize()
+    void Initialize()
     {
+        currentWordContainerIndex = 0;
+        canAddLetter = true;
+
+        DisableTryButton();
+
         for(int i = 0; i < wordContainers.Length; i++)
         {
             wordContainers[i].Initialize();
@@ -58,7 +81,9 @@ public class InputManager : MonoBehaviour
 
 
         if(wordToCheck == secretWord)
-            Debug.Log("Level Complete");
+        {
+            SetLevelComplete();
+        }
         else
         {
             Debug.Log("Wrong word");
@@ -66,6 +91,18 @@ public class InputManager : MonoBehaviour
             DisableTryButton();
             currentWordContainerIndex++;
         }
+    }
+    void SetLevelComplete()
+    {
+        UpdateData();
+        GameManager.instance.SetGameState(GameState.LevelComplete);
+    }
+    void UpdateData()
+    {
+        int scoreToAdd = 6 - currentWordContainerIndex;
+
+        DataManager.instance.IncreaseScore(scoreToAdd);
+        DataManager.instance.AddCoins(scoreToAdd * 3);
     }
     public void BackspacePressedCallback()
     {
