@@ -50,6 +50,11 @@ public class DataManager : MonoBehaviour
             bestScore = score;
         SaveData();
     }
+    public void ResetScore()
+    {
+        score = 0;
+        SaveData();
+    }
     public int GetCoins()
     {
         return coins;

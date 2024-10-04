@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager instance;
+
     [Header("Elements")]
     [SerializeField] WordContainer[] wordContainers;
     [SerializeField] Button tryButton;
@@ -14,6 +17,16 @@ public class InputManager : MonoBehaviour
     [Header("Setting")]
     int currentWordContainerIndex;
     bool canAddLetter = true;
+
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+            Destroy(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -86,10 +99,20 @@ public class InputManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Wrong word");
-            canAddLetter = true;
-            DisableTryButton();
+            //Debug.Log("Wrong word");
             currentWordContainerIndex++;
+            DisableTryButton();
+
+            if(currentWordContainerIndex >= wordContainers.Length)
+            {
+               //Debug.Log("Gameover");
+               DataManager.instance.ResetScore();
+               GameManager.instance.SetGameState(GameState.Gameover);
+            }
+            else
+            {
+                canAddLetter = true;
+            }
         }
     }
     void SetLevelComplete()
@@ -106,8 +129,10 @@ public class InputManager : MonoBehaviour
     }
     public void BackspacePressedCallback()
     {
+        // if(!GameManager.instance.IsGameState())
+        //     return;
         bool removedLetter = wordContainers[currentWordContainerIndex].RemoveLetter();
-        
+            
         if(removedLetter)
             DisableTryButton();
         canAddLetter = true;
@@ -120,5 +145,9 @@ public class InputManager : MonoBehaviour
     void DisableTryButton()
     {
         tryButton.interactable = false;
+    }
+    public WordContainer GetCurrentWordContainer()
+    {
+        return wordContainers[currentWordContainerIndex];
     }
 }

@@ -38,9 +38,12 @@ public class GameManager : MonoBehaviour
     {
         
     }
-
     public void NextButtonCallback()
     {
         SetGameState(GameState.Game);
+    }
+    public bool IsGameState()
+    {
+        return gameState == GameState.Game;
     }
 }
