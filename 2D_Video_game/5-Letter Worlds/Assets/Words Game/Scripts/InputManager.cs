@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour
     [Header("Setting")]
     int currentWordContainerIndex;
     bool canAddLetter = true;
+    bool shouldReset; // false
 
     void Awake()
     {
@@ -44,10 +45,16 @@ public class InputManager : MonoBehaviour
         switch (gameState)
         {
             case GameState.Game:
-                Initialize();
+                if(shouldReset)
+                    Initialize();
                 break;
             
             case GameState.LevelComplete:
+                shouldReset =  true;
+                break;
+            
+            case GameState.Gameover:
+                shouldReset = true;
                 break;
         }
     }
@@ -68,6 +75,7 @@ public class InputManager : MonoBehaviour
         {
             wordContainers[i].Initialize();
         }
+        shouldReset = false;
     }
     void KeyPressedCallback(char letter)
     {
@@ -129,8 +137,8 @@ public class InputManager : MonoBehaviour
     }
     public void BackspacePressedCallback()
     {
-        // if(!GameManager.instance.IsGameState())
-        //     return;
+        if(!GameManager.instance.IsGameState())
+            return;
         bool removedLetter = wordContainers[currentWordContainerIndex].RemoveLetter();
             
         if(removedLetter)

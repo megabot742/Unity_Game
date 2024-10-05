@@ -42,6 +42,14 @@ public class GameManager : MonoBehaviour
     {
         SetGameState(GameState.Game);
     }
+    public void PlayButtonCallback()
+    {
+        SetGameState(GameState.Game);
+    }
+    public void BackButtonCallback()
+    {
+        SetGameState(GameState.Menu);
+    }
     public bool IsGameState()
     {
         return gameState == GameState.Game;

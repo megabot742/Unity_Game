@@ -8,6 +8,9 @@ public class HintManager : MonoBehaviour
     [Header("Elements")]
     [SerializeField] GameObject keyboard;
     KeyboardKey[] keys;
+
+    [Header("Setting")]
+    bool shouldReset;
     void Awake()
     {
         keys = keyboard.GetComponentsInChildren<KeyboardKey>();
@@ -15,9 +18,36 @@ public class HintManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.onGameStateChanged += GameStateChangedCallback;
     }
-
+    void OnDestroy()
+    {
+        GameManager.onGameStateChanged -= GameStateChangedCallback;
+    }
+    void GameStateChangedCallback(GameState gameState)
+    {
+        switch (gameState)
+        {
+            case GameState.Menu:
+                break;
+            
+            case GameState.Game:
+                if(shouldReset)
+                {
+                    letterHintGivenIndices.Clear();
+                    shouldReset = false;
+                }
+                break;
+            
+            case GameState.LevelComplete:
+                shouldReset = true;
+                break;
+            
+            case GameState.Gameover:
+                shouldReset = true;
+                break;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
