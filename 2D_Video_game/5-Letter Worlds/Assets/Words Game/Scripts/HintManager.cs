@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 
 public class HintManager : MonoBehaviour
@@ -9,7 +10,14 @@ public class HintManager : MonoBehaviour
     [SerializeField] GameObject keyboard;
     KeyboardKey[] keys;
 
+    [Header("Text Elements")]
+    [SerializeField] TextMeshProUGUI keyboardPriceText;
+    [SerializeField] TextMeshProUGUI letterPriceText;
+
+
     [Header("Setting")]
+    [SerializeField] int keyboardHintPrice;
+    [SerializeField] int letterHintPrice;
     bool shouldReset;
     void Awake()
     {
@@ -18,6 +26,9 @@ public class HintManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        keyboardPriceText.text = keyboardHintPrice.ToString();
+        letterPriceText.text = letterHintPrice.ToString();
+
         GameManager.onGameStateChanged += GameStateChangedCallback;
     }
     void OnDestroy()
@@ -55,6 +66,9 @@ public class HintManager : MonoBehaviour
     }
     public void KeyboardHint()
     {
+        if(DataManager.instance.GetCoins() < keyboardHintPrice)
+            return;
+
         //Debug.Log("Keyboard Hint");
         string secretWord = WordManager.instance.GetSecretWord();
 
@@ -79,11 +93,16 @@ public class HintManager : MonoBehaviour
         
         int randomKeyIndex = Random.Range(0, t_untouchedKeys.Count);
         t_untouchedKeys[randomKeyIndex].SetInvalid();
+
+        DataManager.instance.RemoveCoins(keyboardHintPrice);
     }
 
     List<int> letterHintGivenIndices = new List<int>();
     public void LetterHint()
     {
+        if(DataManager.instance.GetCoins() < letterHintPrice)
+            return;
+
         //Debug.Log("Letter Hint");
         if(letterHintGivenIndices.Count >= 5)
         {
@@ -104,5 +123,7 @@ public class HintManager : MonoBehaviour
         letterHintGivenIndices.Add(randomIndex);
 
         currentWordContainer.AddAsHint(randomIndex, secretWord[randomIndex]);
+
+        DataManager.instance.RemoveCoins(letterHintPrice);
     }
 }

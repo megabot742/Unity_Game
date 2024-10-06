@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class DataManager : MonoBehaviour
 
     [Header("Data")]
     int coins, score, bestScore;
+
+    [Header("Evenet")]
+    public static Action onCoinsUpdate;
     void Awake()
     {
         if(instance == null)
@@ -34,6 +38,8 @@ public class DataManager : MonoBehaviour
     {
         coins += amount;
         SaveData();
+
+        onCoinsUpdate?.Invoke();
     }
 
     public void RemoveCoins(int amount)
@@ -41,6 +47,8 @@ public class DataManager : MonoBehaviour
         coins -= amount;
         coins = Mathf.Max(coins, 0);
         SaveData();
+
+        onCoinsUpdate?.Invoke();
     }
     public void IncreaseScore(int amount)
     {

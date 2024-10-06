@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -47,10 +48,12 @@ public class UIManager : MonoBehaviour
         HideGameover();
 
         GameManager.onGameStateChanged += GameStateChangedCallback;
+        DataManager.onCoinsUpdate += UpdateCoinsTexts;
     }
     void OnDestroy()
     {
         GameManager.onGameStateChanged -= GameStateChangedCallback;
+        DataManager.onCoinsUpdate -= UpdateCoinsTexts;
     }
     void GameStateChangedCallback(GameState gameState)
     {
@@ -84,6 +87,13 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void UpdateCoinsTexts()
+    {
+        menuCoins.text = DataManager.instance.GetCoins().ToString();
+        gameCoins.text = menuCoins.text;
+        levelCompleteCoins.text = menuCoins.text;
+        gameoverCoins.text = menuCoins.text;
     }
     void ShowMenu()
     {
