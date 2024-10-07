@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using System;
 
 public class InputManager : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class InputManager : MonoBehaviour
     int currentWordContainerIndex;
     bool canAddLetter = true;
     bool shouldReset; // false
+
+    [Header("Events")]
+    public static Action onLetterAdded;
+    public static Action onLetterRemoved;
 
     void Awake()
     {
@@ -88,8 +93,9 @@ public class InputManager : MonoBehaviour
         {
             canAddLetter = false;
             EnableTryButton();
-            //CheckWord();
         }
+        
+        onLetterAdded?.Invoke();
         
     }
     public void CheckWord()
@@ -144,6 +150,8 @@ public class InputManager : MonoBehaviour
         if(removedLetter)
             DisableTryButton();
         canAddLetter = true;
+
+        onLetterRemoved?.Invoke(); //remove letter sound
     }
 
     void EnableTryButton()

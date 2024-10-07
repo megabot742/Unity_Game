@@ -13,7 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] CanvasGroup gameCG;
     [SerializeField] CanvasGroup levelCompleteCG;
     [SerializeField] CanvasGroup gameoverCG;
-
+    [SerializeField] CanvasGroup settingCG;
+ 
     [Header("Menu Elements")]
     [SerializeField] TextMeshProUGUI menuCoins;
     [SerializeField] TextMeshProUGUI menuBestScore;
@@ -138,6 +139,14 @@ public class UIManager : MonoBehaviour
     void HideGameover()
     {
         HideCG(gameoverCG);
+    }
+    public void ShowSetting()
+    {
+        ShowCG(settingCG);
+    }
+    public void HideSetting()
+    {
+        HideCG(settingCG);
     }
 
     void ShowCG(CanvasGroup cg)
